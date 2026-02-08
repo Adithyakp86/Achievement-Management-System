@@ -200,7 +200,7 @@ def init_db():
     connection.close()
 
 # Call initialization function
-# init_db()
+init_db()
 
 @app.route("/")
 def home():
@@ -439,7 +439,7 @@ def submit_achievements():
 
             with sqlite3.connect(DB_PATH) as connection:
                 # First establish connection and cursor before using them
-                connection = sqlite3.connect(DB_PATH)
+                # connection = sqlite3.connect(DB_PATH)
                 cursor = connection.cursor()
 
                 # Debug: Check if achievements table exists
@@ -782,4 +782,5 @@ if __name__ == "__main__":
     # migrate_achievements_table()
     add_teacher_id_column()
     app.run(debug=True)
+
 
